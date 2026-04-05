@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Kethpawana Restaurant | Authentic Sri Lankan Flavors in Udupila</title>
+  <!-- Google Fonts + Font Awesome CDN for clean icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #fefaf5;
+      color: #2c2418;
+      scroll-behavior: smooth;
+    }
+
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    /* header & nav */
+    .navbar {
+      background: #ffffffdd;
+      backdrop-filter: blur(12px);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.02);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      border-bottom: 1px solid #f0e3d4;
+    }
+    .nav-flex {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 0;
+      flex-wrap: wrap;
+    }
+    .logo h1 {
+      font-size: 1.8rem;
+      font-weight: 700;
+      letter-spacing: -0.3px;
+      background: linear-gradient(135deg, #b6562c, #e28b3e);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+    .logo p {
+      font-size: 0.8rem;
+      color: #8b694a;
+      font-weight: 500;
+    }
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      align-items: center;
+    }
+    .nav-links a {
+      text-decoration: none;
+      font-weight: 500;
+      color: #3e2a21;
+      transition: 0.2s;
+    }
+    .nav-links a:hover {
+      color: #c25d2e;
+    }
+    .btn-outline {
+      border: 1.5px solid #d97a2b;
+      padding: 0.5rem 1.2rem;
+      border-radius: 40px;
+      background: transparent;
+      font-weight: 600;
+      transition: 0.2s;
+    }
+    .btn-outline:hover {
+      background: #d97a2b;
+      color: white !important;
+    }
+
+    /* hero */
+    .hero {
+      background: linear-gradient(105deg, #fff3e8 0%, #fde9db 100%);
+      border-radius: 0 0 3rem 3rem;
+      margin-bottom: 2.5rem;
+      padding: 3rem 0 3rem 0;
+    }
+    .hero-grid {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 2rem;
+    }
+    .hero-text {
+      flex: 1;
+    }
+    .hero-text .rating-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #fff;
+      padding: 0.4rem 1rem;
+      border-radius: 50px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+      margin-bottom: 1.5rem;
+      font-weight: 500;
+    }
+    .hero-text .rating-badge i {
+      color: #f4b642;
+    }
+    .hero-text h1 {
+      font-size: 3.2rem;
+      font-weight: 800;
+      line-height: 1.2;
+      margin-bottom: 1rem;
+      color: #2c2418;
+    }
+    .hero-text .highlight {
+      color: #c25d2e;
+    }
+    .hero-text p {
+      font-size: 1.1rem;
+      color: #5c493a;
+      max-width: 500px;
+      margin-bottom: 2rem;
+    }
+    .hero-buttons {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    .btn-primary {
+      background: #d97a2b;
+      color: white;
+      border: none;
+      padding: 0.8rem 2rem;
+      border-radius: 40px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: 0.2s;
+      text-decoration: none;
+      display: inline-block;
+    }
+    .btn-primary:hover {
+      background: #b85f1f;
+      transform: scale(0.98);
+    }
+    .btn-secondary {
+      background: white;
+      border: 1px solid #d9c2ac;
+      padding: 0.8rem 2rem;
+      border-radius: 40px;
+      font-weight: 600;
+      color: #2c2418;
+      text-decoration: none;
+      transition: 0.2s;
+    }
+    .hero-img {
+      flex: 1;
+      text-align: center;
+    }
+    .hero-img img {
+      max-width: 100%;
+      border-radius: 2rem;
+      box-shadow: 0 20px 35px -10px rgba(0,0,0,0.1);
+    }
+
+    /* highlights cards */
+    .section-title {
+      text-align: center;
+      font-size: 2rem;
+      font-weight: 700;
+      margin: 3rem 0 1.5rem 0;
+      position: relative;
+    }
+    .section-title:after {
+      content: '';
+      display: block;
+      width: 70px;
+      height: 4px;
+      background: #e28b3e;
+      margin: 0.5rem auto 0;
+      border-radius: 4px;
+    }
+    .features {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      justify-content: center;
+      margin: 2rem 0;
+    }
+    .feature-card {
+      background: white;
+      border-radius: 28px;
+      padding: 1.5rem;
+      flex: 1;
+      min-width: 200px;
+      text-align: center;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.03);
+      border: 1px solid #f0e2d4;
+      transition: all 0.2s;
+    }
+    .feature-card i {
+      font-size: 2.2rem;
+      color: #d97a2b;
+      margin-bottom: 0.8rem;
+    }
+
+    /* menu preview */
+    .menu-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.8rem;
+      justify-content: center;
+      margin: 2rem 0 1rem;
+    }
+    .menu-item {
+      background: white;
+      border-radius: 28px;
+      overflow: hidden;
+      width: 260px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+      transition: 0.25s ease;
+      border: 1px solid #f3e5d9;
+    }
+    .menu-item:hover {
+      transform: translateY(-6px);
+    }
+    .menu-img {
+      height: 160px;
+      background-size: cover;
+      background-position: center;
+    }
+    .menu-content {
+      padding: 1rem;
+    }
+    .menu-content h3 {
+      font-weight: 700;
+    }
+    .price {
+      color: #c25d2e;
+      font-weight: 700;
+      margin-top: 0.5rem;
+    }
+
+    /* google reviews summary */
+    .reviews-showcase {
+      background: #fff8f2;
+      border-radius: 2rem;
+      padding: 2rem;
+      margin: 2.5rem 0;
+      border: 1px solid #ffe6d5;
+    }
+    .review-stats {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+    .rating-big {
+      font-size: 3.5rem;
+      font-weight: 800;
+    }
+    .stars i {
+      color: #ffb73b;
+      font-size: 1.3rem;
+    }
+    .review-cards {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      margin-top: 1.5rem;
+    }
+    .single-review {
+      background: white;
+      border-radius: 1.2rem;
+      padding: 1.2rem;
+      flex: 1;
+      min-width: 220px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+      border: 1px solid #efdfd0;
+    }
+    .reviewer {
+      font-weight: 700;
+      margin-top: 0.5rem;
+    }
+
+    /* contact & info */
+    .info-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      margin: 2rem 0 3rem;
+      background: #ffffffd9;
+      border-radius: 2rem;
+      padding: 2rem;
+      border: 1px solid #eedfcb;
+    }
+    .info-card {
+      flex: 1;
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+    }
+    .info-card i {
+      font-size: 2rem;
+      color: #c25d2e;
+    }
+    .map-placeholder {
+      background: #e7d9ce;
+      border-radius: 1.5rem;
+      height: 200px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 1rem;
+      background-image: url('https://placehold.co/1200x400/f7ede3/8b694a?text=📍+Kethpawana+Restaurant+-+Udupila+Area');
+      background-size: cover;
+      background-position: center;
+      color: #4e3624;
+      font-weight: 600;
+      border-radius: 1.8rem;
+    }
+
+    footer {
+      background: #241f1a;
+      color: #cfc3b6;
+      padding: 2rem 0;
+      margin-top: 2rem;
+      text-align: center;
+    }
+
+    @media (max-width: 780px) {
+      .nav-flex {
+        flex-direction: column;
+        gap: 0.8rem;
+      }
+      .hero-text h1 {
+        font-size: 2.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="container nav-flex">
+    <div class="logo">
+      <h1>Kethpawana</h1>
+      <p>Authentic Sri Lankan Kitchen</p>
+    </div>
+    <div class="nav-links">
+      <a href="#">Home</a>
+      <a href="#menu">Menu</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#contact">Contact</a>
+      <a href="#" class="btn-outline"><i class="fas fa-phone-alt"></i> Call</a>
+    </div>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="container hero-grid">
+    <div class="hero-text">
+      <div class="rating-badge">
+        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+        <span>4.3 ⭐ (24 reviews) · Google</span>
+      </div>
+      <h1>Hidden gem in <span class="highlight">Udupila</span> – Taste Sri Lanka’s soul</h1>
+      <p>Authentic rice & curry · crispy dosai · warm roti · fresh manioc. Family recipes since 2015.</p>
+      <div class="hero-buttons">
+        <a href="#" class="btn-primary"><i class="fas fa-utensils"></i> Explore Menu</a>
+        <a href="#" class="btn-secondary"><i class="fas fa-map-marker-alt"></i> Get Directions</a>
+      </div>
+    </div>
+    <div class="hero-img">
+      <img src="https://placehold.co/600x450/f7efe7/c96f2e?text=Kethpawana+Special+Platter" alt="Kethpawana food platter">
+    </div>
+  </div>
+</section>
+
+<div class="container">
+  <!-- highlights / features -->
+  <div class="features">
+    <div class="feature-card"><i class="fas fa-seedling"></i><h3>Fresh ingredients</h3><p>Local harvest, bold flavors</p></div>
+    <div class="feature-card"><i class="fas fa-motorcycle"></i><h3>Takeaway & Dine-in</h3><p>Open till 11 PM · cozy vibe</p></div>
+    <div class="feature-card"><i class="fas fa-hand-holding-heart"></i><h3>Own recipes</h3><p>Generations of tradition</p></div>
+  </div>
+
+  <!-- menu preview section -->
+  <div id="menu">
+    <h2 class="section-title">Our signature menu</h2>
+    <div class="menu-grid">
+      <div class="menu-item">
+        <div class="menu-img" style="background-image: url('https://placehold.co/400x200/f3e1d2/b85f1f?text=Rice+%26+Curry');"></div>
+        <div class="menu-content"><h3>Traditional Rice & Curry</h3><p>Seasonal vegetables, spicy sambol & dhal</p><div class="price">LKR 550</div></div>
+      </div>
+      <div class="menu-item">
+        <div class="menu-img" style="background-image: url('https://placehold.co/400x200/f3e1d2/b85f1f?text=Crispy+Dosai');"></div>
+        <div class="menu-content"><h3>Golden Dosai</h3><p>With coconut chutney & curry</p><div class="price">LKR 380</div></div>
+      </div>
+      <div class="menu-item">
+        <div class="menu-img" style="background-image: url('https://placehold.co/400x200/f3e1d2/b85f1f?text=Roti+Set');"></div>
+        <div class="menu-content"><h3>Soft Roti</h3><p>Spicy onion sambol or curry dip</p><div class="price">LKR 320</div></div>
+      </div>
+      <div class="menu-item">
+        <div class="menu-img" style="background-image: url('https://placehold.co/400x200/f3e1d2/b85f1f?text=Pork+Curry');"></div>
+        <div class="menu-content"><h3>Devilled Pork</h3><p>Local favourite · rich & aromatic</p><div class="price">LKR 890</div></div>
+      </div>
+      <div class="menu-item">
+        <div class="menu-img" style="background-image: url('https://placehold.co/400x200/f3e1d2/b85f1f?text=Manioc');"></div>
+        <div class="menu-content"><h3>Manioc (Cassava)</h3><p>Steamed with spicy onion relish</p><div class="price">LKR 290</div></div>
+      </div>
+    </div>
+    <p style="text-align:center; margin-top:0.5rem;">⭐ wide selection of rice, curry, string hoppers & more — crafted daily</p>
+  </div>
+
+  <!-- review summary from real Google data (based on listing) -->
+  <div id="reviews" class="reviews-showcase">
+    <div class="review-stats">
+      <div><span class="rating-big">4.3</span> <span class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></span><br>24 Google reviews</div>
+      <div><i class="fas fa-thumbs-up"></i> “Hidden gem in Udupila”</div>
+    </div>
+    <div class="review-cards">
+      <div class="single-review">
+        <i class="fas fa-quote-left" style="color:#d97a2b;"></i>
+        <p>If you're in the Udupila area, Keth Pawana Restaurant is truly a must-visit. Wide selection of delicious, high-quality dishes prepared with fresh ingredients.</p>
+        <div class="reviewer">— Vimu Gamingx</div>
+      </div>
+      <div class="single-review">
+        <i class="fas fa-quote-left" style="color:#d97a2b;"></i>
+        <p>This place is a hidden gem. They offer aromatic rice & curry, crispy dosai, comforting roti, string hoppers and manioc. All amazing!</p>
+        <div class="reviewer">— Chathubhanu Adikari · Local Guide</div>
+      </div>
+      <div class="single-review">
+        <i class="fas fa-quote-left" style="color:#d97a2b;"></i>
+        <p>Quality food and reasonable price. Only restaurant in Udupila, Delgoda area. They never change their authentic recipes. Customer satisfaction guaranteed.</p>
+        <div class="reviewer">— Promod Kaushalya</div>
+      </div>
+    </div>
+    <div style="margin-top: 1rem; text-align: right;"><a href="#" style="color:#b85f1f;">See all 21+ reviews →</a></div>
+  </div>
+
+  <!-- location, contact, hours -->
+  <div id="contact">
+    <h2 class="section-title">Visit us</h2>
+    <div class="info-grid">
+      <div class="info-card"><i class="fas fa-map-pin"></i><div><strong>Address</strong><br>Udupila, Delgoda area, X2V7+PQX, Sri Lanka</div></div>
+      <div class="info-card"><i class="fas fa-clock"></i><div><strong>Opening hours</strong><br>Open daily · Closes 11 PM</div></div>
+      <div class="info-card"><i class="fas fa-phone-alt"></i><div><strong>Call us</strong><br>071 662 8199</div></div>
+      <div class="info-card"><i class="fas fa-utensils"></i><div><strong>Service</strong><br>Dine-in · Takeaway</div></div>
+    </div>
+    <div class="map-placeholder">
+      <span><i class="fas fa-location-dot"></i> Kethpawana Restaurant — Udupila, Delgoda | open now till 11PM</span>
+    </div>
+    <div style="display: flex; justify-content: center; gap: 1rem; margin: 1.5rem 0 2rem;">
+      <a href="#" class="btn-primary" style="background:#4c6a3b;"><i class="fas fa-directions"></i> Get Directions (Google Maps)</a>
+      <a href="#" class="btn-secondary"><i class="fas fa-share-alt"></i> Share this page</a>
+    </div>
+  </div>
+
+  <!-- popular times section inspired by listing -->
+  <div style="background: #fff2e9; border-radius: 1.5rem; padding: 1rem 1.5rem; margin: 1rem 0 2rem;">
+    <h3 style="display: flex; gap: 0.5rem; align-items: center;"><i class="fas fa-chart-line"></i> Popular times (Sundays)</h3>
+    <div style="display: flex; flex-wrap: wrap; gap: 0.8rem; margin-top: 0.8rem;">
+      <span class="feature-card" style="padding:0.5rem 1rem;">🌅 6a – 9a: quiet breakfast</span>
+      <span class="feature-card" style="padding:0.5rem 1rem;">🍛 12p – 3p: lunch rush</span>
+      <span class="feature-card" style="padding:0.5rem 1rem;">🌙 6p – 9p: dinner vibe</span>
+    </div>
+    <p class="fine" style="font-size:0.8rem; margin-top:0.8rem;">Based on local trends — best to call ahead for busy evenings.</p>
+  </div>
+</div>
+
+<footer>
+  <div class="container">
+    <p>© 2025 Kethpawana Restaurant — Authentic Sri Lankan flavors in Udupila, Delgoda.</p>
+    <p style="margin-top:0.5rem; font-size:0.85rem;"><i class="fas fa-mug-hot"></i> Own family recipes · Fresh ingredients · Rated 4.3★ by 24 guests</p>
+    <p style="margin-top: 1rem;"><a href="#" style="color:#e2b28b;">Claim this business</a> · <a href="#" style="color:#e2b28b;">Suggest an edit</a> · <a href="#" style="color:#e2b28b;">Add missing info</a></p>
+  </div>
+</footer>
+
+<!-- simple interactive alert for demonstration (call to action) -->
+<script>
+  // adding a subtle interactive for buttons to simulate a functional call/click
+  const btns = document.querySelectorAll('.btn-primary, .btn-outline, .btn-secondary');
+  btns.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      if(btn.innerText.includes('Call') || btn.innerText.includes('phone') || btn.href === '#'){
+        e.preventDefault();
+        if(btn.innerText.includes('Call') || btn.innerText.includes('phone')){
+          alert("📞 Call Kethpawana Restaurant: 071 662 8199");
+        } else if (btn.innerText.includes('Directions') || btn.innerText.includes('Map')){
+          alert("📍 Open Google Maps: Udupila, Delgoda area, X2V7+PQX");
+        } else if (btn.innerText.includes('Menu') || btn.innerText.includes('Explore')){
+          alert("🍛 Our signature menu: Rice & Curry, Dosai, Roti, Pork Curry, Manioc, String Hoppers. Visit us to taste the best!");
+        } else {
+          alert("✨ Thank you for visiting Kethpawana — hidden gem of Udupila ✨");
+        }
+      }
+    });
+  });
+  // for share & see all reviews fake trigger
+  const shareBtn = document.querySelector('a[class*="btn-secondary"]:nth-child(2)');
+  if(shareBtn) {
+    shareBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      alert("🌐 Share this page: Kethpawana Restaurant — 4.3 stars, authentic Sri Lankan food in Udupila.");
+    });
+  }
+  const seeAllReviews = document.querySelector('div[style*="text-align: right;"] a');
+  if(seeAllReviews) {
+    seeAllReviews.addEventListener('click', (e) => {
+      e.preventDefault();
+      alert("⭐ Read all 24 Google reviews: praised for pork curry, rice & curry, and friendly service. Come experience why customers love us!");
+    });
+  }
+</script>
+</body>
+</html>
