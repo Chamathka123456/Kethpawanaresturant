@@ -4,8 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>Kethpawana Restaurant | Authentic Sri Lankan Flavors in Udupila</title>
-  <!-- Google Fonts + Font Awesome CDN for clean icons -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+  <!-- Google Fonts + Font Awesome CDN -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <style>
     * {
@@ -46,7 +46,7 @@
     }
     .logo h1 {
       font-size: 1.8rem;
-      font-weight: 700;
+      font-weight: 800;
       letter-spacing: -0.3px;
       background: linear-gradient(135deg, #b6562c, #e28b3e);
       background-clip: text;
@@ -170,6 +170,10 @@
       max-width: 100%;
       border-radius: 2rem;
       box-shadow: 0 20px 35px -10px rgba(0,0,0,0.1);
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      max-height: 380px;
     }
 
     /* highlights cards */
@@ -213,7 +217,7 @@
       margin-bottom: 0.8rem;
     }
 
-    /* menu preview */
+    /* menu preview with REAL images */
     .menu-grid {
       display: flex;
       flex-wrap: wrap;
@@ -237,6 +241,7 @@
       height: 160px;
       background-size: cover;
       background-position: center;
+      background-repeat: no-repeat;
     }
     .menu-content {
       padding: 1rem;
@@ -330,6 +335,36 @@
       border-radius: 1.8rem;
     }
 
+    /* gallery row for the 4 new images */
+    .gallery-section {
+      margin: 2rem 0 2rem;
+    }
+    .image-gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1.5rem;
+      margin-top: 1rem;
+    }
+    .gallery-item {
+      width: 140px;
+      height: 140px;
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.08);
+      transition: transform 0.25s ease;
+      border: 2px solid white;
+    }
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .gallery-item:hover {
+      transform: scale(1.03);
+    }
+
     footer {
       background: #241f1a;
       color: #cfc3b6;
@@ -345,6 +380,10 @@
       }
       .hero-text h1 {
         font-size: 2.2rem;
+      }
+      .gallery-item {
+        width: 120px;
+        height: 120px;
       }
     }
   </style>
@@ -382,12 +421,33 @@
       </div>
     </div>
     <div class="hero-img">
-      <img src="https://placehold.co/600x450/f7efe7/c96f2e?text=Kethpawana+Special+Platter" alt="Kethpawana food platter">
+      <!-- first image from Google as hero main -->
+      <img src="https://lh3.googleusercontent.com/gps-cs-s/AHVAwerjJW-Da83a1r6EhFLqPbh9xWiGhd4KEPfo8aWxI6pwStKohLDIg3pVaibxHl7wLaCZnPeVvs6VGtcnC6FG8rLzHhYkXZXtVZ5DndBYzbQhpjCxKqzMIe-_1bjjV4Ak54AH2wb3=w140-h140-p-k-no" alt="Kethpawana signature dish" style="width:100%; max-height:360px; object-fit:cover;">
     </div>
   </div>
 </section>
 
 <div class="container">
+  <!-- NEW gallery section: all 4 google images displayed beautifully -->
+  <div class="gallery-section">
+    <h2 class="section-title">Authentic moments</h2>
+    <div class="image-gallery">
+      <div class="gallery-item">
+        <img src="https://lh3.googleusercontent.com/gps-cs-s/AHVAwerjJW-Da83a1r6EhFLqPbh9xWiGhd4KEPfo8aWxI6pwStKohLDIg3pVaibxHl7wLaCZnPeVvs6VGtcnC6FG8rLzHhYkXZXtVZ5DndBYzbQhpjCxKqzMIe-_1bjjV4Ak54AH2wb3=w140-h140-p-k-no" alt="Food dish 1">
+      </div>
+      <div class="gallery-item">
+        <img src="https://lh3.googleusercontent.com/gps-cs-s/AHVAweoEx7DGW_cBHcpQ74osnhd9YV7opN3AapkFHAa8lzAVbevwhU-SPKGE1B_y7Y0Z4E5iI0DK9V6SEG9vf760_KitCR3rIzclX6HF13_5YzhLjoEub1dEag0ghRxkCRscZz1-HsC28Q=w140-h140-p-k-no" alt="Food dish 2">
+      </div>
+      <div class="gallery-item">
+        <img src="https://lh3.googleusercontent.com/gps-cs-s/AHVAweqowWHV-7h-IAjPGojH43bmPNNdJw7slnYPerSKPVbXIOsu1Rn2eHK7Fe23v-H5CC9-QUpmFOMCX1T4gj_xl6xsCiSrvh2ayHc2yZiUpOyxsusiY5qOC30vBTsxwrrSBEqqRZmrmQ=w140-h140-p-k-no" alt="Food dish 3">
+      </div>
+      <div class="gallery-item">
+        <img src="https://lh3.googleusercontent.com/gps-cs-s/AHVAweop2nd0WudEZ6RTyG8zzyex6_DDaYQXJaMv6f1g358e8wQmLdE5PuL3AwKTzBN9Pa6lEww123IjT51k8LzcWL5ofxgthNmheHPMc0lmOnYzJkgiuaPws7KS2c2sMTAEX8N-zQjOVw=w140-h140-p-k-no" alt="Food dish 4">
+      </div>
+    </div>
+    <p style="text-align:center; margin-top: 0.8rem; color:#7e5f43;"><i class="fas fa-camera"></i> Real flavors from our kitchen — captured by guests</p>
+  </div>
+
   <!-- highlights / features -->
   <div class="features">
     <div class="feature-card"><i class="fas fa-seedling"></i><h3>Fresh ingredients</h3><p>Local harvest, bold flavors</p></div>
@@ -400,30 +460,30 @@
     <h2 class="section-title">Our signature menu</h2>
     <div class="menu-grid">
       <div class="menu-item">
-        <div class="menu-img" style="background-image: url('https://placehold.co/400x200/f3e1d2/b85f1f?text=Rice+%26+Curry');"></div>
+        <div class="menu-img" style="background-image: url('https://lh3.googleusercontent.com/gps-cs-s/AHVAwerjJW-Da83a1r6EhFLqPbh9xWiGhd4KEPfo8aWxI6pwStKohLDIg3pVaibxHl7wLaCZnPeVvs6VGtcnC6FG8rLzHhYkXZXtVZ5DndBYzbQhpjCxKqzMIe-_1bjjV4Ak54AH2wb3=w140-h140-p-k-no'); background-size:cover;"></div>
         <div class="menu-content"><h3>Traditional Rice & Curry</h3><p>Seasonal vegetables, spicy sambol & dhal</p><div class="price">LKR 550</div></div>
       </div>
       <div class="menu-item">
-        <div class="menu-img" style="background-image: url('https://placehold.co/400x200/f3e1d2/b85f1f?text=Crispy+Dosai');"></div>
+        <div class="menu-img" style="background-image: url('https://lh3.googleusercontent.com/gps-cs-s/AHVAweoEx7DGW_cBHcpQ74osnhd9YV7opN3AapkFHAa8lzAVbevwhU-SPKGE1B_y7Y0Z4E5iI0DK9V6SEG9vf760_KitCR3rIzclX6HF13_5YzhLjoEub1dEag0ghRxkCRscZz1-HsC28Q=w140-h140-p-k-no'); background-size:cover;"></div>
         <div class="menu-content"><h3>Golden Dosai</h3><p>With coconut chutney & curry</p><div class="price">LKR 380</div></div>
       </div>
       <div class="menu-item">
-        <div class="menu-img" style="background-image: url('https://placehold.co/400x200/f3e1d2/b85f1f?text=Roti+Set');"></div>
+        <div class="menu-img" style="background-image: url('https://lh3.googleusercontent.com/gps-cs-s/AHVAweqowWHV-7h-IAjPGojH43bmPNNdJw7slnYPerSKPVbXIOsu1Rn2eHK7Fe23v-H5CC9-QUpmFOMCX1T4gj_xl6xsCiSrvh2ayHc2yZiUpOyxsusiY5qOC30vBTsxwrrSBEqqRZmrmQ=w140-h140-p-k-no'); background-size:cover;"></div>
         <div class="menu-content"><h3>Soft Roti</h3><p>Spicy onion sambol or curry dip</p><div class="price">LKR 320</div></div>
       </div>
       <div class="menu-item">
-        <div class="menu-img" style="background-image: url('https://placehold.co/400x200/f3e1d2/b85f1f?text=Pork+Curry');"></div>
+        <div class="menu-img" style="background-image: url('https://lh3.googleusercontent.com/gps-cs-s/AHVAweop2nd0WudEZ6RTyG8zzyex6_DDaYQXJaMv6f1g358e8wQmLdE5PuL3AwKTzBN9Pa6lEww123IjT51k8LzcWL5ofxgthNmheHPMc0lmOnYzJkgiuaPws7KS2c2sMTAEX8N-zQjOVw=w140-h140-p-k-no'); background-size:cover;"></div>
         <div class="menu-content"><h3>Devilled Pork</h3><p>Local favourite · rich & aromatic</p><div class="price">LKR 890</div></div>
       </div>
       <div class="menu-item">
-        <div class="menu-img" style="background-image: url('https://placehold.co/400x200/f3e1d2/b85f1f?text=Manioc');"></div>
+        <div class="menu-img" style="background-image: url('https://lh3.googleusercontent.com/gps-cs-s/AHVAwerjJW-Da83a1r6EhFLqPbh9xWiGhd4KEPfo8aWxI6pwStKohLDIg3pVaibxHl7wLaCZnPeVvs6VGtcnC6FG8rLzHhYkXZXtVZ5DndBYzbQhpjCxKqzMIe-_1bjjV4Ak54AH2wb3=w140-h140-p-k-no'); background-size:cover;"></div>
         <div class="menu-content"><h3>Manioc (Cassava)</h3><p>Steamed with spicy onion relish</p><div class="price">LKR 290</div></div>
       </div>
     </div>
     <p style="text-align:center; margin-top:0.5rem;">⭐ wide selection of rice, curry, string hoppers & more — crafted daily</p>
   </div>
 
-  <!-- review summary from real Google data (based on listing) -->
+  <!-- review summary from real Google data -->
   <div id="reviews" class="reviews-showcase">
     <div class="review-stats">
       <div><span class="rating-big">4.3</span> <span class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></span><br>24 Google reviews</div>
@@ -467,7 +527,7 @@
     </div>
   </div>
 
-  <!-- popular times section inspired by listing -->
+  <!-- popular times section -->
   <div style="background: #fff2e9; border-radius: 1.5rem; padding: 1rem 1.5rem; margin: 1rem 0 2rem;">
     <h3 style="display: flex; gap: 0.5rem; align-items: center;"><i class="fas fa-chart-line"></i> Popular times (Sundays)</h3>
     <div style="display: flex; flex-wrap: wrap; gap: 0.8rem; margin-top: 0.8rem;">
@@ -487,34 +547,30 @@
   </div>
 </footer>
 
-<!-- simple interactive alert for demonstration (call to action) -->
 <script>
-  // adding a subtle interactive for buttons to simulate a functional call/click
+  // interactive alerts for demo purpose
   const btns = document.querySelectorAll('.btn-primary, .btn-outline, .btn-secondary');
   btns.forEach(btn => {
     btn.addEventListener('click', (e) => {
-      if(btn.innerText.includes('Call') || btn.innerText.includes('phone') || btn.href === '#'){
+      if(btn.innerText.includes('Call') || (btn.innerText.includes('phone') && btn.innerText.length < 20)){
         e.preventDefault();
-        if(btn.innerText.includes('Call') || btn.innerText.includes('phone')){
-          alert("📞 Call Kethpawana Restaurant: 071 662 8199");
-        } else if (btn.innerText.includes('Directions') || btn.innerText.includes('Map')){
-          alert("📍 Open Google Maps: Udupila, Delgoda area, X2V7+PQX");
-        } else if (btn.innerText.includes('Menu') || btn.innerText.includes('Explore')){
-          alert("🍛 Our signature menu: Rice & Curry, Dosai, Roti, Pork Curry, Manioc, String Hoppers. Visit us to taste the best!");
-        } else {
+        alert("📞 Call Kethpawana Restaurant: 071 662 8199");
+      } else if(btn.innerText.includes('Directions') || btn.innerText.includes('Map')){
+        e.preventDefault();
+        alert("📍 Open Google Maps: Udupila, Delgoda area, X2V7+PQX");
+      } else if(btn.innerText.includes('Menu') || btn.innerText.includes('Explore')){
+        e.preventDefault();
+        alert("🍛 Our signature menu: Rice & Curry, Dosai, Roti, Pork Curry, Manioc, String Hoppers. Visit us to taste the best!");
+      } else if(btn.innerText.includes('Share')){
+        e.preventDefault();
+        alert("🌐 Share this page: Kethpawana Restaurant — 4.3 stars, authentic Sri Lankan food in Udupila.");
+      } else {
+        if(btn.href === '#' || btn.getAttribute('href') === '#')
+          e.preventDefault();
           alert("✨ Thank you for visiting Kethpawana — hidden gem of Udupila ✨");
-        }
       }
     });
   });
-  // for share & see all reviews fake trigger
-  const shareBtn = document.querySelector('a[class*="btn-secondary"]:nth-child(2)');
-  if(shareBtn) {
-    shareBtn.addEventListener('click', (e) => {
-      e.preventDefault();
-      alert("🌐 Share this page: Kethpawana Restaurant — 4.3 stars, authentic Sri Lankan food in Udupila.");
-    });
-  }
   const seeAllReviews = document.querySelector('div[style*="text-align: right;"] a');
   if(seeAllReviews) {
     seeAllReviews.addEventListener('click', (e) => {
